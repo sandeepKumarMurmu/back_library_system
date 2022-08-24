@@ -37,10 +37,10 @@ route.get(
 route.post(
   "/entry",
   FeildValidation.firstNameValidation,
-  FeildValidation.middleNameValidation,
   FeildValidation.lastNameValidation,
   FeildValidation.emailValidation,
   errorValidation,
+  FeildValidation.middleNameValidation,
   authriseAdmin_Student.uniqueEmail,
   adminController.createAdmin
 );

@@ -24,4 +24,10 @@ module.exports = {
 
     return { limit: limit, offset: skip };
   },
+  idFilter: (_id, variable, Op) => {
+    let obj = {};
+    if (_id !== undefined) obj[variable] = { [Op]: +_id.trim() };
+
+    return obj;
+  },
 };

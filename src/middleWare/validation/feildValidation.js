@@ -10,11 +10,20 @@ module.exports = {
     .withMessage("wrong input format"),
   // ------------------------------------------------------------------------------------------------------------
   // middleName Validator
-  middleNameValidation: body("middleName")
-    .isLength({ max: 30, min: 4 })
-    .withMessage(" name or title must be between 3 to 30 characters")
-    .isAlpha()
-    .withMessage("wrong input format"),
+  middleNameValidation: (req, res, next) => {
+    const { middleName } = req.body;
+
+    if (
+      (!/^[A-Za-z\s]+$/.test(middleName) && middleName.length) ||
+      (middleName.length <= 3 && middleName.length >= 30)
+    ) {
+      return res
+        .status(400)
+        .json({ message: /^[A-Za-z\s]+$/.test(middleName) });
+    }
+
+    next();
+  },
   // ------------------------------------------------------------------------------------------------------------
   // lastName Validator
   lastNameValidation: body("lastName")
@@ -83,3 +92,9 @@ module.exports = {
   // status Validator
   statusValidation: body("status").isBoolean().withMessage("invalid selection"),
 };
+
+// body("middleName")
+//   .isLength({ max: 30 })
+//   .withMessage(" name or title must be between 3 to 30 characters")
+//   .isAlpha()
+//   .withMessage("wrong input format");
