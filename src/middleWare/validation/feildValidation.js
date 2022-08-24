@@ -20,6 +20,18 @@ module.exports = {
     .isNumeric()
     .withMessage("invalid stream selection"),
   // ------------------------------------------------------------------------------------------------------------
+  // streamName input Validator
+  streamValidationInput: body("streamName")
+    .isAlpha()
+    .isLength({ max: 30 })
+    .withMessage("invalid stream name"),
+  // ------------------------------------------------------------------------------------------------------------
+  // stream code Validator
+  streamValidationCode: body("streamCode")
+    .isAlpha()
+    .isLength({ max: 5 })
+    .withMessage("invalid stream code"),
+  // ------------------------------------------------------------------------------------------------------------
   // year Validator
   yearValidation: body("year")
     .isNumeric()

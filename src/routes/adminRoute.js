@@ -24,8 +24,16 @@ route.post(
   authriseAdmin_Student.passwordValidation,
   adminController.loginAdmin
 );
-route.get("/get/:id", adminController.getAdminById);
-route.get("/get", adminController.getAdminBySearch);
+route.get(
+  "/get/:id",
+  authriseAdmin_Student.verifyTokenMiddle,
+  adminController.getAdminById
+);
+route.get(
+  "/get",
+  authriseAdmin_Student.verifyTokenMiddle,
+  adminController.getAdminBySearch
+);
 route.post(
   "/entry",
   FeildValidation.nameValidation,
