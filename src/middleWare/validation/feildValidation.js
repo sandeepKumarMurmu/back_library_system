@@ -2,8 +2,22 @@ const { body } = require("express-validator");
 
 module.exports = {
   // ------------------------------------------------------------------------------------------------------------
-  // name Validator
-  nameValidation: body("fullName")
+  // first Validator
+  firstNameValidation: body("firstName")
+    .isLength({ max: 30, min: 4 })
+    .withMessage(" name or title must be between 3 to 30 characters")
+    .isAlpha()
+    .withMessage("wrong input format"),
+  // ------------------------------------------------------------------------------------------------------------
+  // middleName Validator
+  middleNameValidation: body("middleName")
+    .isLength({ max: 30, min: 4 })
+    .withMessage(" name or title must be between 3 to 30 characters")
+    .isAlpha()
+    .withMessage("wrong input format"),
+  // ------------------------------------------------------------------------------------------------------------
+  // lastName Validator
+  lastNameValidation: body("lastName")
     .isLength({ max: 30, min: 4 })
     .withMessage(" name or title must be between 3 to 30 characters")
     .isAlpha()

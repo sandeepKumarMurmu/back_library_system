@@ -34,7 +34,9 @@ route.get(
 route.post(
   "/entry",
   authriseAdmin_Student.verifyTokenMiddle,
-  FeildValidation.nameValidation,
+  FeildValidation.firstNameValidation,
+  FeildValidation.middleNameValidation,
+  FeildValidation.lastNameValidation,
   FeildValidation.emailValidation,
   FeildValidation.addressValidation,
   FeildValidation.yearValidation,

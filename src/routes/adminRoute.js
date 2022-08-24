@@ -36,7 +36,9 @@ route.get(
 );
 route.post(
   "/entry",
-  FeildValidation.nameValidation,
+  FeildValidation.firstNameValidation,
+  FeildValidation.middleNameValidation,
+  FeildValidation.lastNameValidation,
   FeildValidation.emailValidation,
   errorValidation,
   authriseAdmin_Student.uniqueEmail,

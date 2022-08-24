@@ -1,4 +1,4 @@
-const baseRoute = "/api/v1/student-library-system";
+const baseRoute = process.env.BASE_URL;
 
 // main route function
 module.exports = (app) => {

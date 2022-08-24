@@ -76,10 +76,10 @@ module.exports = {
   // -------------------------------------------------------------------------------------------------------------------------------------------------------------
   //create Admin by queries controller
   createAdmin: async (req, res) => {
-    const { fullName, email, password } = req.body;
+    const { firstName, middleName, lastName, email, password } = req.body;
     try {
       const adminData = await Admin.create({
-        adminName: fullName,
+        adminName: firstName + " " + middleName + " " + lastName,
         adminEmail: email,
         adminPassword: hashPassword(password),
       });
@@ -104,8 +104,8 @@ module.exports = {
   loginAdmin: async (req, res) => {
     try {
       let token = tokenFunction.generateToken({
-        email: req.query.email,
-        id: req.query.id,
+        email: req.body.email,
+        id: req.body.id,
       });
       return res.status(200).json({
         message: "admin created",
