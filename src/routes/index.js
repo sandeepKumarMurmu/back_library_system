@@ -6,7 +6,7 @@ module.exports = (app) => {
   app.use(baseRoute + "/year", require("./yearRoute"));
   app.use(baseRoute + "/stream", require("./streamRoute"));
   app.use(baseRoute + "/student", require("./studentRoute"));
-  app.use(baseRoute + "/book-entry", require("./bookRoute"));
+  app.use(baseRoute + "/book", require("./bookRoute"));
   app.use(baseRoute + "/author", require("./authorRoute"));
   app.use(baseRoute + "/author-book", require("./authorBookJunctionRoute"));
   app.use(baseRoute + "/author-stream", require("./authorStreamJunctionRoute"));

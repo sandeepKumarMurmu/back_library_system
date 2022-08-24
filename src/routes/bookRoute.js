@@ -14,10 +14,20 @@ const route = express.Router();
 // -----------------------------------------------------------------------------------------------------------
 // creating book end points
 route.post(
-  "/",
+  "/entry",
   authriseAdmin_Student.verifyTokenMiddle,
   bookController.createBook
 );
+route.get(
+  "/get",
+  authriseAdmin_Student.verifyTokenMiddle,
+  bookController.getBookById
+);
+// route.get(
+//   "/get",
+//   authriseAdmin_Student.verifyTokenMiddle,
+//   bookController.getBookBySearch
+// );
 
 // -----------------------------------------------------------------------------------------------------------
 // exporting book route

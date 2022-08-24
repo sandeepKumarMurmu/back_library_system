@@ -26,7 +26,7 @@ module.exports = {
   },
   idFilter: (_id, variable, Op) => {
     let obj = {};
-    if (_id !== undefined) obj[variable] = { [Op]: +_id.trim() };
+    if (_id !== undefined) obj[variable] = { [Op]: +_id };
 
     return obj;
   },
