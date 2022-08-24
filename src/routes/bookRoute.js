@@ -23,11 +23,6 @@ route.get(
   authriseAdmin_Student.verifyTokenMiddle,
   bookController.getBookById
 );
-// route.get(
-//   "/get",
-//   authriseAdmin_Student.verifyTokenMiddle,
-//   bookController.getBookBySearch
-// );
 
 // -----------------------------------------------------------------------------------------------------------
 // exporting book route
