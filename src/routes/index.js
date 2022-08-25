@@ -11,4 +11,5 @@ module.exports = (app) => {
   app.use(baseRoute + "/author-book", require("./authorBookJunctionRoute"));
   app.use(baseRoute + "/author-stream", require("./authorStreamJunctionRoute"));
   app.use(baseRoute + "/book-student", require("./studentBookJunctionRoute"));
+  app.use(baseRoute + "/test", require("./test"));
 };
