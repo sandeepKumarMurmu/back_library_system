@@ -21,7 +21,7 @@ route.post(
 route.get(
   "/get",
   authriseAdmin_Student.verifyTokenMiddle,
-  bookController.getBookById
+  bookController.getBookByQuery
 );
 
 // -----------------------------------------------------------------------------------------------------------

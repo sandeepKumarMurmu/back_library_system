@@ -37,29 +37,10 @@ module.exports = {
       });
     }
   },
-  // -----------------------------------------------------------------------------------------------------------
-  //getting book controller
-  getBookBySearch: async (req, res) => {
-    // const { title, quantity, catogery, stream } = req.body;
-    try {
-      const bookData = await Book.findAndCountAll();
-
-      return res
-        .status(200)
-        .json({ message: "book got", data: bookData, status: true });
-    } catch (e) {
-      return res.status(400).json({
-        message: "something wrong inside got book conrtoller",
-        data: null,
-        status: false,
-        e,
-      });
-    }
-  },
 
   // -----------------------------------------------------------------------------------------------------------
   //getting book by id controller
-  getBookById: async (req, res) => {
+  getBookByQuery: async (req, res) => {
     const { _id, authors, quantity, stream, bookName, orderByQuantity } =
       req.query;
     try {
